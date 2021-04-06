@@ -1,0 +1,14 @@
+.logo {
+  height: 1em;
+}
+
+.link {
+  height: 1em;
+  &.selected {
+    background-color: coral;
+  }
+}
+
+a.selected {
+  color: blue;
+}
