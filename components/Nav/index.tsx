@@ -1,17 +1,22 @@
-import Link from 'next/link'
+import Link from '../Link'
+import NextLink from 'next/link'
 import navStyles from './Nav.module.scss'
 
 const Nav = () => {
   return (
     <nav className={navStyles.nav}>
-      <ul>
-        <li>
-          <Link href='/'>Home</Link>
-        </li>
-        <li>
-          <Link href='/about'>About</Link>
-        </li>
-      </ul>
+      <NextLink href='/' >
+        <a className={navStyles.logo}><h1>JDtheGeek</h1></a>
+      </NextLink>
+      <Link href='/'>
+        <a >Home</a>
+      </Link>
+      <Link href='/projects'>
+        <a >Project</a>
+      </Link>
+      <Link href='/about'>
+        <a className="link">About</a>
+      </Link>
     </nav>
   )
 }
