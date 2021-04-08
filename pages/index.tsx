@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import styles from '../styles/Home.module.scss'
 
 export default function Home() {
   return (
@@ -9,7 +10,9 @@ export default function Home() {
         <title>John Dennehy - Portfolio!</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>Hi, I'm JD!</h1>
+      <h1 className={styles.outline}>
+        John <span className={styles.fill}>Dennehy</span>
+      </h1>
       <Link href="/projects">
         <a>See projects</a>
       </Link>
