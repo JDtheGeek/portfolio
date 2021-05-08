@@ -1,8 +1,18 @@
 .link {
   height: 1em;
+  padding: 1rem;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom-color 0.3s ease-in-out;
+  -webkit-transition: border-bottom-color 0.3s ease-in-out;
+
+  &--selected {
+    @extend .link;
+    border-bottom: 2px solid var(--clr-accent_1-400);
+    transition: ease-in-out;
+  }
+  &:hover {
+    color: var(--clr-accent_3-400)
+  }
+
 }
 
-.selected {
-  color: blue;
-  border-bottom: 2px solid red;
-}

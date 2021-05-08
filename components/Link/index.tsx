@@ -3,13 +3,13 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import linkStyles from './Link.module.scss'
 
-export const CustomLink = ({ href, children, ...props }) => {
+export const CustomLink = ({ href, children, ...props }): JSX.Element => {
   const currentPath = useRouter().asPath
   const singleChild = React.Children.only(children)
 
   const childClassName = currentPath === href
-    ? `${linkStyles.selected}`
-    : `${linkStyles.link}`
+    ? `${linkStyles["link--selected"]}`
+    : `${linkStyles["link"]}`
 
   return (
     <Link href={href} {...props}>
