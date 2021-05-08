@@ -1,0 +1,18 @@
+.button {
+  cursor: pointer;
+  display: inline;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--clr-neutral-900);
+  background-color: var(--clr-accent_1-400);
+  padding: 0.5em 1.25em;
+  border-radius: 5em;
+  border-color: var(--clr-accent_1-400);
+  border-style: solid;
+  border-width: 2px;
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--clr-neutral-100);
+}
