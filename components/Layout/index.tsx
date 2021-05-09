@@ -1,14 +1,16 @@
 import styles from './Layout.module.scss'
-import Nav from '../Nav'
+import Header from '../Header'
+import Footer from '../Footer'
 
-const Layout = ({ children }) => {
+const Layout = ({ children }): JSX.Element => {
   return (
     <>
-      <Nav />
       <div className={styles.container}>
+        <Header/>
         <main className={styles.main}>
           {children}
         </main>
+        <Footer/>
       </div>
     </>
   )
