@@ -1,0 +1,22 @@
+.container {
+  display: grid;
+  place-items: center;
+  background-color: var(--clr-neutral-200);
+  padding: 1rem 1rem 3rem 1rem;
+}
+
+ul.contact_list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tel:before {
+  content: "\260e";
+  margin-right: 0.5em;
+}
+
+.email:before {
+    content: "\1F4E7";
+  margin-right: 0.5em;
+}
