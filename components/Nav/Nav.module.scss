@@ -1,14 +1,12 @@
-.logo {
-  height: 1em;
-}
+.nav {
+  background: var(--clr-primary-400, blue);
+  align-self: center;
+  justify-self: end;
+  color: white;
 
-.link {
-  height: 1em;
-  &.selected {
-    background-color: coral;
+  & > * {
+    align-self: center;
+    justify-self: end;
   }
 }
 
-a.selected {
-  color: blue;
-}

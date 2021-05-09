@@ -1,20 +1,20 @@
 import Link from '../Link'
-import NextLink from 'next/link'
-import navStyles from './Nav.module.scss'
+import Styles from './Nav.module.scss'
 
-const Nav = () => {
+
+const Nav = (): JSX.Element => {
   return (
-    <nav className={navStyles.nav}>
-      <NextLink href='/' >
-        <a className={navStyles.logo}><h1>JDtheGeek</h1></a>
-      </NextLink>
-      <Link href='/'>
+    <nav className={Styles.nav}>
+      <Link className={Styles.link} href='/'>
         <a >Home</a>
       </Link>
-      <Link href='/projects'>
-        <a >Project</a>
+      <Link className={Styles.link} href='/cv'>
+        <a >CV</a>
       </Link>
-      <Link href='/about'>
+      <Link className={Styles.link} href='/projects'>
+        <a >Projects</a>
+      </Link>
+      <Link className={Styles.link} href='/about'>
         <a className="link">About</a>
       </Link>
     </nav>
