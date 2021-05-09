@@ -1,47 +1,42 @@
 import Head from 'next/head'
-import Link from 'next/link'
-import { request } from '../lib/datocms'
-
 import { motion } from 'framer-motion'
+import { request } from '../lib/datocms'
 import styles from '../styles/Home.module.scss'
+import { HOMEPAGE_QUERY, SHOWCASE_QUERY } from '../graphql'
+import Showcase from '../components/Showcase'
+import { GetStaticProps } from 'next'
 
-const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
-  allProjects(first: $limit, filter: { showcase: {eq: true}}, orderBy: position_ASC) {
-    id
-    title
-    slug
-  }
-}`;
+export const getStaticProps: GetStaticProps = async (context) => {
 
-export async function getStaticProps(context) {
-  const data = await request({
+  const pageData = await request({
     query: HOMEPAGE_QUERY,
-    variables: { limit: 10 },
     preview: context.preview
   });
+
+  const showcaseData = await request({
+    query: SHOWCASE_QUERY,
+    preview: context.preview
+  })
+
   return {
-    props: { data }
+    props: { pageData, showcaseData }
   };
 }
 
-export default function Home({data}) {
+export const Home = ({ pageData, showcaseData }): JSX.Element  => {
   return (
-    <motion.div exit={{ opacity: 0 }} className="container">
+    <motion.div exit={{ opacity: 0 }} className={styles.container}>
       <Head>
         <title>John Dennehy - Portfolio!</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.container}>
-        <h1>
-          John <span className="dennehy">Dennehy</span>
-        </h1>
-      </main>
-      <div className="projects">
-        {JSON.stringify(data, null, 2)}
-      <Link href="/projects">
-        <a>See all projects</a>
-      </Link>
+      <div className={styles.hero}>
+        <h2>Hello world</h2>
       </div>
+      <Showcase data={showcaseData} />
+
     </motion.div>
   )
 }
+
+export default Home
