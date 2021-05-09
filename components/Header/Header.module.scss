@@ -1,3 +1,21 @@
+.header {
+  padding: 1rem 2rem;
+  display: grid;
+  background: var(--clr-primary-400);
+  position: sticky;
+  top: 0%;
+  grid-template-columns: auto auto;
+  // width: 100vw;
+  height: 100px;
+  align-content: center;
+  z-index: 50;
+}
+
+.logo {
+  margin: 10px;
+  padding: 1rem;
+}
+
 .title a {
   color: #0070f3;
   text-decoration: none;

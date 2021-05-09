@@ -1,12 +1,25 @@
 import styles from './Header.module.scss'
-import React from 'react'
+import Nav from '../Nav'
+import Image from 'next/image'
+import Link from 'next/link';
 
-export const Header = ({ title, description }) => {
+export const Header = (): JSX.Element => {
+
   return (
-    <div >
-      <h1 className={styles.title}>{ title}</h1>
-      <p className={styles.description}>{description}</p>
-    </div>
+    <header className={styles.header}>
+      <Link href='/' >
+        <a className={styles.logo}>
+          <Image
+            src="/logo.svg"
+            alt="Logo for John Dennehy"
+            layout="intrinsic"
+            width={120}
+            height={70}
+          />
+        </a>
+      </Link>
+      <Nav />
+    </header>
   )
 }
 
